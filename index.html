@@ -23,21 +23,50 @@
         <link rel="stylesheet" href="http://virtualstock.co.uk/themes/virtualstock/css/main.css" />
         <link rel="stylesheet" href="override.css" />
         <link rel="stylesheet" href="slideshow.css" />
-
+        <link rel="stylesheet" href="faq.css" />
+        
         <script src="themes/virtualstock/js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="slideshow.js"></script>
+
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <script language="javascript">
+    function pageonload()
+    {
+        currentSlide(1);
+        var action = 'click';
+        var speed = "500";
+        $(document).ready(function(){
+        // Question handler
+            $('li.q').on(action, function(){
+                // gets next element
+                // opens .a of selected question
+                $(this).next().slideToggle(speed)
+                // selects all other answers and slides up any open answer
+                .siblings('li.a').slideUp();
+                // Grab img from clicked question
+                var img = $(this).children('img');
+                // remove Rotate class from all images except the active
+
+                $('img').not(img).removeClass('rotate');
+                img.toggleClass('rotate');
+            });
+            $("li.a").slideUp();
+        });
+            
+        
+    }
+        </script>
     </head>
-    <body role="document" onload="currentSlide(1)">
+    <body role="document" onload="pageonload()">
       <!--[if lt IE 7]>
           <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
       
-      <div class="navbar navbar-default affix" role="navigation" id="nav">
+      <div class="navbar navbar-default affix" role="navigation" id="nav" style="height:55px;">
       
      <!-- Fixed navbar -->
      <!-- class=" "-->
@@ -58,10 +87,14 @@
 	              <li><a href="/">OMNICHANNEL SOLUTION</a></li>
 	            </ul>
 	            <img src="themes/virtualstock/img/square-logo.png" alt="Virtualstock" />
-	          </div>
+	          </div>       
           </div>
           <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+                <div class="signup" style="position: relative; top: 15px; left:50px; width:450px; height:100px">
+                    <a class="btn-lg btn-primary" href="http://market.the-edge.io/users/register/supplier/" target="_blank">I want in!</a>
+                    <a class="btn-lg btn-primary" href="https://www.the-edge.io/cas/login?service=https%3A%2F%2Fmarket.the-edge.io%2Faccounts%2Flogin%2F%3Fnext%3D%252F" target="_blank">Take me to the login page</a>
+                </div>        
+            <ul class="nav navbar-nav" style="position: relative; top: -110px; left:-30px" >
               
               <li class="link">
                   <a href="/" title="Go to the The Ultimate Omnichannel Solution page">Home</a>
@@ -102,7 +135,7 @@
         </div>
       </div>
       
-      <div style="height:45px; width:100%;"></div><!-- this makes sure the title is UNDER the navbar -->
+      <div style="height:65px; width:100%;"></div><!-- this makes sure the title is UNDER the navbar -->
       
 
 
@@ -114,9 +147,9 @@
         <div class="row info">
           <div class="col-lg-12">
             <h2>Get paid on time. Every time.</h2>
-            <!-- <div style="position:absolute;">
+            <!--
             <a class="btn" href="http://market.the-edge.io/users/register/supplier/" target="_blank">I want in!</a>
-<a class="btn" href="https://www.the-edge.io/cas/login?service=https%3A%2F%2Fmarket.the-edge.io%2Faccounts%2Flogin%2F%3Fnext%3D%252F" target="_blank">Take me to the login page</a></div> -->
+<a class="btn" href="https://www.the-edge.io/cas/login?service=https%3A%2F%2Fmarket.the-edge.io%2Faccounts%2Flogin%2F%3Fnext%3D%252F" target="_blank">Take me to the login page</a>-->
             <div class="intro">
 
             </div>
@@ -186,7 +219,67 @@
           </div>
           <div id="faq" class="col-lg-12">
           <h3>Frequently Asked Questions</h3>
-          FAQ go here.
+          <ul class="faq">
+<li class="q">Q: What is The Edge?
+</li>
+<li class="a">
+The Edge is a new, cloud-based ‘PIM2PAY’ platform that has been adopted by Guy’s and St Thomas’ NHS Foundation Trust (GSTT) to deliver all of their Catalogue Management and purchase-to-pay (P2P) requirements. 
+ 
+Currently, the Catalogue Management module has been implemented by GSTT. In June 2017, the Procure-To-Pay (P2P) module will go live. 
+</li>
+<li class="q">Q: Why do I have to use The Edge?
+</li><li class="a">
+Suppliers who want to sell products to NHS Trusts (like GSTT) who have adopted The Edge must also use it to enable both the Trust and the supplier to transact and operate efficiently. 
+</li>
+<li class="q">Q: Which Trusts are using The Edge?
+</li>
+<li class="a">GSTT has been live since November 2015. The remaining members of the Shelford Group, and other, key NHS Trusts such as North Tees and Hartlepool NHS Foundation Trust (a national GS1 Demonstrator site), Northampton, Dartford and Gravesham, Kettering, and Lewisham, will be going live over the coming weeks. NHS Shared Business Services (SBS), the largest Shared Service in the NHS, have also adopted the platform, and waves of NHS Trusts will also be going live throughout 2017.  
+</li>
+<li class="q">Q: What are the benefits of using The Edge?
+</li>
+<li class="a"><p>The supplier loads their entire product catalogue only once. This gives the supplier product visibility and the ability to receive orders from all the Trusts they share their pricing with.</p><p>There is no limit to the number of products a supplier can load (and no limits on the number of users or edits). This could provide an opportunity to sell much more of your product range to the Trusts you provide products to.</p><p>The 3-way invoice matching functionality will ensure that there is no dispute over pricing and the supplier’s invoices will be fast-tracked for payment.</p>
+</li>
+<li class="q">Q: What is different from the old system?
+</li>
+<li class="a"><p>
+- Suppliers are able to display their whole catalogue rather than just a limited number of products.<br>
+- Products will be displayed with images, attributes and descriptions in an Amazon–style marketplace enabling a much richer buying experience for Trusts.<br>
+- Prices are authorised on one platform which means there are no invoice disputes due to incorrect pricing.<br>
+- Suppliers can be discovered by new Trusts on The Edge (re local controls).<br>
+- Suppliers only have to upload their product files one time for all Trusts to see – not once for every Trust (note that pricing will not be shared among Trusts).<br>
+- Suppliers can use The Edge as a PIM. All product data can be kept in one place enriched and exported/imported at will.<br>
+- Suppliers are able to easily map their data to the GS1 GDSN data model and expose the % compliance.<br>
+- Suppliers will be able to promote or advertise new products and services to Trusts (future development) – a true marketplace.<br>
+</p>
+</li>
+<li class="q">Q: What are the charges for using The Edge?
+</li>
+<li class="a"> 
+<p>There is an annual subscription fee and there is a charge for P2P.</p>
+<p>The subscription fee for Catalogue Management is £240 + VAT per year for Local Suppliers (suppliers who sell to 5 or less Trusts) and £2,400 + VAT per year for National Suppliers (suppliers who sell to more than 5 Trusts) – this fee is payable when uploading your first price file. There is no limit to the number of products you can include in your catalogue or price file.</p>
+<p>When the total value of orders for a Trust exceeds £10,000 in a calendar month there will be a charge of 0.5% of the total value of the orders that we process through The Edge ordering and invoicing system (called P2P). You will be invoiced one month in arrears for this fee. The fee is payable by credit card or bank transfer. </p>
+</li>
+<li class="q">Q: So an SME selling UK wide pays the same as a multi-national?
+</li>
+<li class="a"><p>The SME pays the same as the multi-national for the subscription. The SME pays only for orders over £10,000 per Trust. For orders of £10,000 / month this equates to £50.</p>
+</li>
+<li class="q">Q: Could you explain when the transaction fee is payable?
+</li>
+<li class="a">For order volumes over £10,000, the order transaction fee is invoiced 30 days after the end of the calendar month. 
+</li>
+<li class="q">Q: Are there any charges for uploading the Catalogue only?
+</li>
+<li class="a">There are no charges for uploading your catalogue, and once uploaded they will be visible to all Trusts. However, a Trust cannot buy from you until you have loaded your price file for that Trust.  
+</li>
+<li class="q">Q: Can we receive purchase orders and submit invoices through PEPPOL, rather than through The Edge?
+</li>
+<li class="a">The Edge is a PEPPOL access point. You can choose a separate PEPPOL access point, however, this will feed the orders through The Edge to communicate order status information including tracking. There is a fee to use our PEPPOL access point over and above the 0.5% order fee.
+</li>
+<li class="q">Q: How is the Edge connected with EDI?
+</li>
+<li class="a">The next release of The Edge platform due the end of May will have connections to GHX and NHS Supply Chain. The following release will have connections to PEPPOL. All of these are versions of an EDI. In addition as more suppliers and Trusts come on to The Edge, we will be building a generic API for suppliers to connect to. Again this should cover most EDI solutions used by suppliers with Trusts currently.
+</li>
+      </ul>
        </div>
        
       </div>
