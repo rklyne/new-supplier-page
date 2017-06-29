@@ -1,0 +1,9 @@
+
+The Edge delivers best-in-class eProcurement functionality in the form of an Amazon-style procure-to-pay (P2P) online marketplace. 
+
+The supplier loads their entire product catalogue only once. This gives the supplier’s product range full visibility across all Trusts, and the ability to receive orders from all Trusts they share their pricing with.  
+ 
+There is no limit to the number of products a supplier can load (and no limits on the number of users or edits). This provides an opportunity to sell much more of your product range to the Trusts you provide products to.
+ 
+The 3-way invoice matching functionality will ensure that there is no dispute over pricing and the supplier’s invoices will be fast-tracked for payment.
+ 

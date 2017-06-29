@@ -33,9 +33,19 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
         <script language="javascript">
+   slideIndex=0;
+    function nextSlide()
+    {
+         if (slideIndex == 12) {
+             slideIndex = 1;
+         }; 
+         currentSlide(slideIndex+1);
+         // setTimeout(function() { nextSlide(); },9000 );
+    }
+
     function pageonload()
     {
-        currentSlide(1);
+        setTimeout(function() { nextSlide(); }, 100 );
         var action = 'click';
         var speed = "500";
         $(document).ready(function(){
@@ -90,10 +100,10 @@
 	          </div>       
           </div>
           <div class="navbar-collapse collapse">
-                <div class="signup" style="position: relative; top: 15px; left:50px; width:450px; height:100px">
-                    <a class="btn-lg btn-primary" href="http://market.the-edge.io/users/register/supplier/" target="_blank">I want in!</a>
-                    <a class="btn-lg btn-primary" href="https://www.the-edge.io/cas/login?service=https%3A%2F%2Fmarket.the-edge.io%2Faccounts%2Flogin%2F%3Fnext%3D%252F" target="_blank">Take me to the login page</a>
-                </div>        
+                    <div class="signup" style="position: relative; top: 15px; left:50px; width:450px; height:100px">
+                    <a class="btn-lg btn-primary" href="http://market.the-edge.io/users/register/supplier/" target="_blank">REGISTER NOW</a>
+                    <a class="btn-lg btn-primary" href="https://www.the-edge.io/cas/login?service=https%3A%2F%2Fmarket.the-edge.io%2Faccounts%2Flogin%2F%3Fnext%3D%252F" target="_blank">LOGIN</a>
+                </div>    
             <ul class="nav navbar-nav" style="position: relative; top: -110px; left:-30px" >
               
               <li class="link">
@@ -146,14 +156,29 @@
       <div class="container">
         <div class="row info">
           <div class="col-lg-12">
-            <h2>Get paid on time. Every time.</h2>
+             <h2 style="text-align: left">Use one platform to sell more and get paid on time. Every time.</h2>
             <!--
             <a class="btn" href="http://market.the-edge.io/users/register/supplier/" target="_blank">I want in!</a>
 <a class="btn" href="https://www.the-edge.io/cas/login?service=https%3A%2F%2Fmarket.the-edge.io%2Faccounts%2Flogin%2F%3Fnext%3D%252F" target="_blank">Take me to the login page</a>-->
             <div class="intro">
 
             </div>
-            <div id="slideshow_container" class="col-lg-8">
+            <div class="col-lg-4 pull-left">            
+                <p class="boilerplate text-justify">The Edge delivers for the NHS best-in-class eProcurement functionality in the form of an Amazon-style procure-to-pay (P2P) online marketplace. </p>
+                <br>
+                <p class="boilerplate  text-justify">The supplier loads their entire product catalogue only once. This gives the supplier’s product range full visibility across all Trusts, and the ability to receive orders from all Trusts they share their pricing with. </p>
+                <br>
+                <p class="boilerplate  text-justify">There is no limit to the number of products a supplier can load (and no limits on the number of users or edits). This provides an opportunity to sell much more of your product range to the Trusts you provide products to.</p>
+                <br>
+                <p class="boilerplate  text-justify">The 3-way invoice matching functionality will ensure that there is no dispute over pricing and the supplier’s invoices will be fast-tracked for payment.</p>             
+                <br>
+                <p class="boilerplate  text-justify">Once you start the registration process you will have an array of Help resources and access to a Service Desk.</p>
+                <br>
+                <a class="btn-lg btn-primary" href="http://market.the-edge.io/users/register/supplier/" target="_blank">REGISTER NOW</a>
+
+            </div>
+            
+             <div id="slideshow_container" class="col-lg-8">
                 <!-- start of slideshow html -->
                 <div class="slideshow-container">
                 <div class="mySlides fade"><img src="images/slideshow01.png" style="width:100%"></div>
@@ -172,7 +197,7 @@
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-                <div style="text-align:left; margin-top:5px">
+                <div style="text-align:right; margin-top:5px">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
@@ -188,17 +213,10 @@
                 <!-- end of slideshow html -->
 
             </div>
-            <div class="col-lg-4 pull-right">            
-                <p class="boilerplate text-justify">The Edge delivers best-in-class eProcurement functionality in the form of an Amazon-style procure-to-pay (P2P) online marketplace. </p>
-                <p class="boilerplate  text-justify">The supplier loads their entire product catalogue only once. This gives the supplier’s product range full visibility across all Trusts, and the ability to receive orders from all Trusts they share their pricing with. </p>
-                <p class="boilerplate  text-justify">There is no limit to the number of products a supplier can load (and no limits on the number of users or edits). This provides an opportunity to sell much more of your product range to the Trusts you provide products to.</p>
-                <p class="boilerplate  text-justify">The 3-way invoice matching functionality will ensure that there is no dispute over pricing and the supplier’s invoices will be fast-tracked for payment.</p>             
-            
-            </div>
-            
-            
+           
             <div id="videos_container" class="col-lg-12">
-            <p> Please see the clip below to learn how The Edge for Healthcare is being adopted at Guys and St Thomas' Trust</p>
+            <br>
+            <p> Please see the videos below to learn how The Edge for Healthcare is being adopted at Guys and St Thomas' Trust:</p>
             <!-- both videos go in here -->
 
                 <div id="video1_container" class="col-lg-6"><!-- first video goes in here -->
@@ -218,7 +236,7 @@
             
           </div>
           <div id="faq" class="col-lg-12">
-          <h3>Frequently Asked Questions</h3>
+          <h2 style="text-align: left">Frequently Asked Questions</h2>
           <ul class="faq">
 <li class="q">Q: What is The Edge?
 </li>

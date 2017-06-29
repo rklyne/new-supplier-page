@@ -1,0 +1,31 @@
+
+ul, li { list-style: none; }
+
+#container {
+  width: 60%;
+  margin: 150px auto;
+  overflow: auto;
+}
+
+.faq li { padding: 20px; font-weight: bold;}
+
+.faq li.q {  
+  color:rgb(227,51,140);
+  font-weight: bold;
+  font-size: 120%;
+  border-bottom: 1px #ddd solid;
+  cursor: pointer;
+}
+
+.faq li.a {
+  background: #EEEEEE;
+  display: none;
+  font-weight: normal;
+  color:#000;
+}
+
+.rotate {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
